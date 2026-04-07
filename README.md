@@ -5,8 +5,7 @@ Extremely lightweight collection of ansi escape sequences useful for creating co
 
 Example:
 
-```
+
 Code Here
 <span style="color:red;">Hello </span>
 
-```
