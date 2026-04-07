@@ -7,5 +7,6 @@ Example:
 
 ```
 Code Here
+\x1b[38;5;249m Colored Code
 
 ```
