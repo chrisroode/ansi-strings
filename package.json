@@ -1,0 +1,11 @@
+{
+  "name": "ansi-strings",
+  "version": "1.0.0",
+  "description": "A collection of ansi formatting strings that can be concated directly with standard output strings to add color to terminal programs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Chris Roode",
+  "license": "SEE LICENSE IN LICENSE"
+}
