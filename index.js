@@ -1,26 +1,3 @@
-/* twoFiftySix.  A small and compact RGB color selector for ANSI 256 output.
-
-1) import it how you want
-2) use the code for a color.  RGB values range from a-f.
-        aaa is black.
-        faa is red
-        ffa is yellow
-        aaf is blue
-        fca is orange. get the picture?
-3) an underscore before the name sets the background.
-        _faa is a red background.
-4) use 'rr' to reset the cursor.
-5) a single letter sets the greyscale values.  They range from a-x.
-
-Concate them into your strings and you're good to go!
-Example usage:
-
-const c = require('./twoFiftySix')
-console.log(`hello! This text is ${c.faa}red${c.rr} and this text is ${c.caf}purple${c.rr}.`);
-
-*/
-
-//Forground colors: RGB
 exports.aaa = `\x1b[38;5;16m`;
 exports.aab = `\x1b[38;5;17m`;
 exports.aac = `\x1b[38;5;18m`;
@@ -237,8 +214,6 @@ exports.ffc = `\x1b[38;5;228m`;
 exports.ffd = `\x1b[38;5;229m`;
 exports.ffe = `\x1b[38;5;230m`;
 exports.fff = `\x1b[38;5;231m`;
-
-//Forground Greyscale
 exports.a = `\x1b[38;5;232m`;
 exports.b = `\x1b[38;5;233m`;
 exports.c = `\x1b[38;5;234m`;
@@ -263,9 +238,6 @@ exports.u = `\x1b[38;5;252m`;
 exports.v = `\x1b[38;5;253m`;
 exports.w = `\x1b[38;5;254m`;
 exports.x = `\x1b[38;5;255m`;
-
-
-//Background Color RGB
 exports._aaa = `\x1b[48;5;16m`;
 exports._aab = `\x1b[48;5;17m`;
 exports._aac = `\x1b[48;5;18m`;
@@ -482,8 +454,6 @@ exports._ffc = `\x1b[48;5;228m`;
 exports._ffd = `\x1b[48;5;229m`;
 exports._ffe = `\x1b[48;5;230m`;
 exports._fff = `\x1b[48;5;231m`;
-
-//Background Greyscale
 exports._a = `\x1b[48;5;232m`;
 exports._b = `\x1b[48;5;233m`;
 exports._c = `\x1b[48;5;234m`;
@@ -508,17 +478,11 @@ exports._u = `\x1b[48;5;252m`;
 exports._v = `\x1b[48;5;253m`;
 exports._w = `\x1b[48;5;254m`;
 exports._x = `\x1b[48;5;255m`;
-
-//Reset colors
 exports.rr = `\x1b[36;0m`;
-
-
 exports.bold = `\x1b[1m`;
 exports.faint = `\x1b[2m`;
 exports.italic = `\x1b[3m`;
 exports.underline = `\x1b[4m`;
-
-
 exports.a0 = `\x1b[30m`;
 exports.a1 = `\x1b[31m`;
 exports.a2 = `\x1b[32m`;
@@ -535,8 +499,6 @@ exports.a12 = `\x1b[94m`;
 exports.a13 = `\x1b[95m`;
 exports.a14 = `\x1b[96m`;
 exports.a15 = `\x1b[97m`;
-
-
 exports._a0 = `\x1b[40m`;
 exports._a1 = `\x1b[41m`;
 exports._a2 = `\x1b[42m`;
@@ -553,30 +515,3 @@ exports._a12 = `\x1b[104m`;
 exports._a13 = `\x1b[105m`;
 exports._a14 = `\x1b[106m`;
 exports._a15 = `\x1b[107m`;
-
-
-/*
-1	Bold or increased intensity	As with faint, the color change is a PC (SCO / CGA) invention.[26][better source needed]
-2	Faint, decreased intensity, or dim	May be implemented as a light font weight like bold.[27]
-3	Italic	Not widely supported. Sometimes treated as inverse or blink.[26]
-4	Underline
-
-
-30	40	Black	0, 0, 0	12, 12, 12	0, 0, 0	1, 1, 1	0, 0, 0
-31	41	Red	196, 0, 0	128, 0, 0	205, 49, 49	197, 15, 31	153, 0, 0	187, 0, 0	127, 0, 0	205, 0, 0	222, 56, 43	205, 0, 0
-32	42	Green	0, 196, 0	0, 128, 0	13, 188, 121	19, 161, 14	0, 166, 0	0, 187, 0	0, 147, 0	0, 205, 0	57, 181, 74	0, 205, 0
-33	43	Yellow	196, 126, 0	128, 128, 0	238, 237, 240	229, 229, 16	193, 156, 0	153, 153, 0	187, 187, 0	252, 127, 0	205, 205, 0	255, 199, 6	205, 205, 0
-34	44	Blue	0, 0, 196	0, 0, 128	36, 114, 200	0, 55, 218	0, 0, 178	0, 0, 187	0, 0, 127	0, 0, 238[34]	0, 111, 184	0, 0, 238
-35	45	Magenta	196, 0, 196	128, 0, 128	1, 36, 86	188, 63, 188	136, 23, 152	178, 0, 178	187, 0, 187	156, 0, 156	205, 0, 205	118, 38, 113	205, 0, 205
-36	46	Cyan	0, 196, 196	0, 128, 128	17, 168, 205	58, 150, 221	0, 166, 178	0, 187, 187	0, 147, 147	0, 205, 205	44, 181, 233	0, 205, 205
-37	47	White	196, 196, 196	192, 192, 192	229, 229, 229	204, 204, 204	191, 191, 191	187, 187, 187	210, 210, 210	229, 229, 229	204, 204, 204	229, 229, 229
-90	100	Bright Black (Gray)	78, 78, 78	128, 128, 128	102, 102, 102	118, 118, 118	102, 102, 102	85, 85, 85	127, 127, 127	127, 127, 127	128, 128, 128	0, 0, 0
-91	101	Bright Red	220, 78, 78	255, 0, 0	241, 76, 76	231, 72, 86	230, 0, 0	255, 85, 85	255, 0, 0
-92	102	Bright Green	78, 220, 78	0, 255, 0	35, 209, 139	22, 198, 12	0, 217, 0	85, 255, 85	0, 252, 0	0, 255, 0
-93	103	Bright Yellow	243, 243, 78	255, 255, 0	245, 245, 67	249, 241, 165	230, 230, 0	255, 255, 85	255, 255, 0
-94	104	Bright Blue	78, 78, 220	0, 0, 255	59, 142, 234	59, 120, 255	0, 0, 255	85, 85, 255	0, 0, 252	92, 92, 255[35]	0, 0, 255	92, 92, 255
-95	105	Bright Magenta	243, 78, 243	255, 0, 255	214, 112, 214	180, 0, 158	230, 0, 230	255, 85, 255	255, 0, 255
-96	106	Bright Cyan	78, 243, 243	0, 255, 255	41, 184, 219	97, 214, 214	0, 230, 230	85, 255, 255	0, 255, 255
-97	107	Bright White	255, 255, 255	229, 229, 229	242, 242, 242	230, 230, 230	255, 255, 255
-
-*/
